@@ -1,6 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
+import DashboardLayout from '../Layout/DashboardLayout';
 import Main from '../Layout/Main';
 import Blogs from '../Pages/Blogs/Blogs';
+import ContactUs from '../Pages/ContactUs/ContactUs';
+import AdminDashboard from '../Pages/Dashboard/AdminDashboard/AdminDashboard';
+import BuyerDashboard from '../Pages/Dashboard/BuyerDashboard/BuyerDashboard';
+import SellerDashboard from '../Pages/Dashboard/SellerDashboard/SellerDashboard';
 import Error from '../Pages/Error/Error';
 import Category from '../Pages/Home/Category';
 import Home from '../Pages/Home/Home';
@@ -21,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/blogs',
         element: <Blogs></Blogs>,
+      },
+      {
+        path: '/contact',
+        element: <ContactUs></ContactUs>,
       },
       {
         path: '/login',
@@ -44,8 +53,29 @@ const router = createBrowserRouter([
       {
         path: '/category/:id',
         element: <Category></Category>,
-        loader: ({ params }) =>
-          fetch(`https://dragon-news-server-chi-lilac.vercel.app/news/${params.id}`),
+      },
+    ],
+  },
+  {
+    path: '/dashboard',
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: '/dashboard/admin',
+        element: <AdminDashboard></AdminDashboard>,
+      },
+      {
+        path: '/dashboard/buyer',
+        element: <BuyerDashboard></BuyerDashboard>,
+      },
+      {
+        path: '/dashboard/seller',
+        element: <SellerDashboard></SellerDashboard>,
       },
     ],
   },
