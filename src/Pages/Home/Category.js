@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/NavBar/NavBar';
+import Products from './Products';
 
 const Category = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('products.json')
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
   return (
     <>
       <Navbar></Navbar>
@@ -35,6 +44,13 @@ const Category = () => {
         </div>
       </div>
 
+      {/*All Products */}
+
+      <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-3">
+        {products.map((product) => (
+          <Products key={product._id} product={product}></Products>
+        ))}
+      </div>
       <Footer></Footer>
     </>
   );

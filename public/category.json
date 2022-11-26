@@ -1,0 +1,23 @@
+[
+  {
+    "_id": 1,
+    "category": "Monitor",
+    "product_Info": [
+      "products.json"
+    ]
+  },
+  {
+    "_id": 2,
+    "category": "Processor",
+    "product_Info": [
+      "products.json"
+    ]
+  },
+  {
+    "_id": 3,
+    "category": "Graphics Card",
+    "product_Info": [
+      "products.json"
+    ]
+  }
+]
