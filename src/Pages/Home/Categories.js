@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-import CategoriesProduct from './CategoriesProduct';
+import { Link } from 'react-router-dom';
+import Products from './Products';
+import BookingModal from './BookingModal/BookingModal';
 
 const Categories = () => {
   const [categoryProducts, setCategoryProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [bookingProduct, setBookingProduct] = useState(null);
 
-  const singleProducts = useLoaderData();
 
   useEffect(() => {
     fetch('category.json')
       .then((res) => res.json())
       .then((data) => setCategoryProducts(data));
+  }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/products')
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
   }, []);
 
   return (
@@ -32,11 +40,23 @@ const Categories = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-3">
-        {singleProducts?.map((parts) => (
-          <CategoriesProduct key={parts._id} parts={parts}></CategoriesProduct>
+
+        {/* All Products */}
+        <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-3">
+        {products?.map((product) => (
+          <Products
+            key={product._id}
+            product={product}
+            setBookingProduct={setBookingProduct}
+          ></Products>
         ))}
+      </div>
+      {bookingProduct && (
+        <BookingModal
+          bookingProduct={bookingProduct}
+          setBookingProduct={setBookingProduct}
+        ></BookingModal>
+      )}
       </div>
     </>
   );
