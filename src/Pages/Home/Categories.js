@@ -2,23 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Products from './Products';
 import BookingModal from './BookingModal/BookingModal';
+import { useQuery } from '@tanstack/react-query';
 
 const Categories = () => {
   const [categoryProducts, setCategoryProducts] = useState([]);
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const [bookingProduct, setBookingProduct] = useState(null);
 
+  const { data: products = [] } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const res = await fetch('http://localhost:5000/products');
+      const data = await res.json();
+      return data;
+    },
+  });
 
   useEffect(() => {
     fetch('category.json')
       .then((res) => res.json())
       .then((data) => setCategoryProducts(data));
-  }, []);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/products')
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
   }, []);
 
   return (
@@ -43,20 +46,20 @@ const Categories = () => {
 
         {/* All Products */}
         <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-3">
-        {products?.map((product) => (
-          <Products
-            key={product._id}
-            product={product}
+          {products?.map((product) => (
+            <Products
+              key={product._id}
+              product={product}
+              setBookingProduct={setBookingProduct}
+            ></Products>
+          ))}
+        </div>
+        {bookingProduct && (
+          <BookingModal
+            bookingProduct={bookingProduct}
             setBookingProduct={setBookingProduct}
-          ></Products>
-        ))}
-      </div>
-      {bookingProduct && (
-        <BookingModal
-          bookingProduct={bookingProduct}
-          setBookingProduct={setBookingProduct}
-        ></BookingModal>
-      )}
+          ></BookingModal>
+        )}
       </div>
     </>
   );

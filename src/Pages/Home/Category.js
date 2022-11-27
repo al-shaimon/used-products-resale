@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
@@ -7,19 +8,17 @@ import Products from './Products';
 
 const Category = () => {
   const [categoryProducts, setCategoryProducts] = useState([]);
-  const [products, setProducts] = useState([]);
   const [bookingProduct, setBookingProduct] = useState(null);
+
+  const { data: products = [] } = useQuery({
+    queryKey: ['products'],
+    queryFn: () => fetch('http://localhost:5000/products').then((res) => res.json()),
+  });
 
   useEffect(() => {
     fetch('category.json')
       .then((res) => res.json())
       .then((data) => setCategoryProducts(data));
-  }, []);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/products')
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
   }, []);
 
   return (
