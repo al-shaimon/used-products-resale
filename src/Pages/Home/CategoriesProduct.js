@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Products = ({ product, setBookingProduct }) => {
-  // console.log(product);
-  const { sellerName, model, img, price, resalePrice, location, yearsOfUse, postTime } = product;
+const CategoriesProduct = ({ parts, setBookingProduct }) => {
+  const { sellerName, model, img, price, resalePrice, location, yearsOfUse, postTime } = parts;
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -27,7 +26,7 @@ const Products = ({ product, setBookingProduct }) => {
             // disabled={}
             htmlFor="booking-modal"
             className="btn btn-primary"
-            onClick={() =>setBookingProduct(product)}
+            onClick={() => setBookingProduct(parts)}
           >
             Book Now
           </label>
@@ -37,4 +36,4 @@ const Products = ({ product, setBookingProduct }) => {
   );
 };
 
-export default Products;
+export default CategoriesProduct;

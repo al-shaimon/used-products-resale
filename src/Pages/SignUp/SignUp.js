@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import toast, { useToaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 // import useToken from '../../hooks/useToken';
@@ -29,7 +29,7 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        toast('User Created Successfully.');
+        toast.success('User Created Successfully.');
         navigate('/');
         const userInfo = {
           displayName: data.name,
@@ -50,6 +50,7 @@ const SignUp = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
+        toast.success('User Logged In Successfully.');
         navigate('/');
         console.log(user);
       })

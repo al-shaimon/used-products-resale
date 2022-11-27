@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
+
 const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
   const { model, resalePrice } = bookingProduct;
   const { user } = useContext(AuthContext);

@@ -1,8 +1,15 @@
 import React from 'react';
+import bg from '../../assets/bg.jpg';
 
 const AboutUs = () => {
   return (
-    <div className="my-20">
+    <div
+      className="my-20 min-h-fit"
+      style={{
+        background: `url(${bg})`,
+        backgroundSize: 'cover',
+      }}
+    >
       <h2 className="text-lg font-semibold">
         Leading Computer, Laptop & Gaming PC Resale & Online Shop in Bangladesh
       </h2>

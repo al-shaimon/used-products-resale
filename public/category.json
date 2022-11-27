@@ -1,14 +1,14 @@
 [
   {
-    "_id": 1,
+    "_id": "1",
     "category": "Monitor"
   },
   {
-    "_id": 2,
+    "_id": "2",
     "category": "Processor"
   },
   {
-    "_id": 3,
+    "_id": "3",
     "category": "Graphics Card"
   }
 ]

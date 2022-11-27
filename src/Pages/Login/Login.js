@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
@@ -31,6 +32,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setLoginUserEmail(data.email);
+        toast.success('User Logged In Successfully.');
         navigate('/dashboard');
       })
       .catch((error) => {
@@ -43,6 +45,7 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
+        toast.success('User Logged In Successfully.');
         navigate('/');
         console.log(user);
       })

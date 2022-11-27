@@ -22,6 +22,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader: () => fetch('products.json'),
       },
       {
         path: '/blogs',
@@ -48,11 +49,13 @@ const router = createBrowserRouter([
         <Category></Category>
       </PrivateRoute>
     ),
+    
     errorElement: <Error></Error>,
     children: [
       {
         path: '/category/:id',
         element: <Category></Category>,
+        
       },
     ],
   },

@@ -1,6 +1,7 @@
 [
   {
     "_id": "01",
+    "category_id": "1",
     "sellerName": "Karim",
     "model": "LG 22MK600M-B 21.5 inch IPS Full HD LED Monitor",
     "img": "https://startech.com.bd/image/cache/catalog/monitor/lg-monitor/22mk600m/lg-22mk600m-1-500x500.jpg",
@@ -12,6 +13,7 @@
   },
   {
     "_id": "02",
+    "category_id": "1",
     "sellerName": "Rahim",
     "model": "BenQ GW2283 21.5 Inch Eye-care Stylish Full HD IPS Monitor",
     "img": "https://startech.com.bd/image/cache/catalog/monitor/benq/gw2283/gw2283-500x500.jpg",
@@ -23,6 +25,7 @@
   },
   {
     "_id": "03",
+    "category_id": "1",
     "sellerName": "Dalim",
     "model": "Xiaomi Redmi G24 23.8 Inch FHD LCD Gaming Monitor",
     "img": "https://startech.com.bd/image/cache/catalog/monitor/xiaomi/redmi-g24/redmi-g24-01-500x500.webp",
@@ -31,8 +34,10 @@
     "location": "Freeport Road, Agrabad, Chattogram",
     "yearsOfUse": "1.5 Year",
     "postTime": "9:49PM, 27th Nov 2022"
-  },{
+  },
+  {
     "_id": "04",
+    "category_id": "2",
     "sellerName": "Jalim",
     "model": "Intel 13th Gen Core i5 13600KF Raptor Lake Processor",
     "img": "https://www.startech.com.bd/image/cache/catalog/processor/Intel/core-i5-13600kf/core-i5-13600kf-01-500x500.webp",
@@ -44,6 +49,7 @@
   },
   {
     "_id": "05",
+    "category_id": "2",
     "sellerName": "Alim",
     "model": "AMD Ryzen 5 5600G Processor with Radeon Graphics",
     "img": "https://startech.com.bd/image/cache/catalog/processor/amd/ryzen-5-5600g/ryzen-5-5600g-500x500.jpg",
@@ -55,6 +61,7 @@
   },
   {
     "_id": "06",
+    "category_id": "2",
     "sellerName": "Elim",
     "model": "Intel Core i3-12100 12th Gen Alder Lake Processor",
     "img": "https://www.startech.com.bd/image/cache/catalog/processor/intel/i3-12100/i3-12100-500x500.jpg",
@@ -63,8 +70,10 @@
     "location": "Sayed Shah Road, Chawkbazar, Chattogram",
     "yearsOfUse": "1.5 Year",
     "postTime": "5:51PM, 26th Nov 2022"
-  },{
+  },
+  {
     "_id": "07",
+    "category_id": "3",
     "model": "PNY GeForce RTX 4080 16GB XLR8 Gaming Verto EPIC-X RGB TF OC GDDR6X Graphics Card",
     "sellerName": "Malim",
     "img": "https://startech.com.bd/image/cache/catalog/graphics-card/pny/geforce-rtx-4080-16gb-xlr8-verto-tf-oc/geforce-rtx-4080-16gb-xlr8-verto-tf-oc-01-500x500.webp",
@@ -76,6 +85,7 @@
   },
   {
     "_id": "08",
+    "category_id": "3",
     "sellerName": "Rahim",
     "model": "MSI GeForce RTX 3080 Ti VENTUS 3X 12GB OC GDDR6X Graphics Card",
     "img": "https://startech.com.bd/image/cache/catalog/graphics-card/msi/rtx-3080-ti-ventus-3x-12g-oc/rtx-3080-ti-ventus-3x-12g-oc-01-500x500.jpg",
@@ -88,6 +98,7 @@
   {
     "_id": "09",
     "sellerName": "Halim",
+    "category_id": "3",
     "model": "MSI GeForce RTX 3050 Ti VENTUS GAMING X 8GB OC GDDR6X Graphics Card",
     "img": "https://www.startech.com.bd/image/cache/catalog/graphics-card/msi/geforce-rtx-3050-gaming-x-8g/geforce-rtx-3050-gaming-x-8g-01-500x500.jpg",
     "price": "46,900৳",
