@@ -1,23 +1,14 @@
 [
   {
     "_id": 1,
-    "category": "Monitor",
-    "product_Info": [
-      "products.json"
-    ]
+    "category": "Monitor"
   },
   {
     "_id": 2,
-    "category": "Processor",
-    "product_Info": [
-      "products.json"
-    ]
+    "category": "Processor"
   },
   {
     "_id": 3,
-    "category": "Graphics Card",
-    "product_Info": [
-      "products.json"
-    ]
+    "category": "Graphics Card"
   }
 ]

@@ -88,7 +88,7 @@ const Login = () => {
           <div>{loginError && <p className="text-red-600">{loginError}</p>}</div>
         </form>
         <p>
-          New to Computer Resale?{' '}
+          New to Diamond Tech Resale?{' '}
           <Link className="text-secondary" to="/signup">
             Create new account
           </Link>

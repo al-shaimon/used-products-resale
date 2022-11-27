@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Products = ({ product }) => {
-  console.log(product);
+const Products = ({ product, setBookingProduct }) => {
+  // console.log(product);
   const { sellerName, model, img, price, resalePrice, location, yearsOfUse, postTime } = product;
   return (
     <div>
@@ -16,10 +16,21 @@ const Products = ({ product }) => {
           </h2>
           <h2>Location: {location}</h2>
           <p>Posted on {postTime}</p>
-          <h3 className="text-lg">Original Price: <strong className='text-red-400'>{price}</strong></h3>
-          <h3 className="text-lg">Resale Price: <strong className='text-green-600'>{resalePrice}</strong></h3>
+          <h3 className="text-lg">
+            Original Price: <strong className="text-red-400">{price}</strong>
+          </h3>
+          <h3 className="text-lg">
+            Resale Price: <strong className="text-green-600">{resalePrice}</strong>
+          </h3>
           <h3 className="text-lg">Years of usage: {yearsOfUse}</h3>
-          <button className="btn btn-primary">Book Now</button>
+          <label
+            // disabled={}
+            htmlFor="booking-modal"
+            className="btn btn-primary"
+            onClick={() =>setBookingProduct(product)}
+          >
+            Book Now
+          </label>
         </div>
       </div>
     </div>
