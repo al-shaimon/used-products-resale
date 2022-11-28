@@ -44,6 +44,9 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
       if (data.data.acknowledged) {
         setBookingProduct(null);
         toast.success('Booking Successful');
+        refetch();
+      } else {
+        toast.error(data.data.message);
       }
     });
   };

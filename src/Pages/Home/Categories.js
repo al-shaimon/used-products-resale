@@ -6,10 +6,9 @@ import { useQuery } from '@tanstack/react-query';
 
 const Categories = () => {
   const [categoryProducts, setCategoryProducts] = useState([]);
-  // const [products, setProducts] = useState([]);
   const [bookingProduct, setBookingProduct] = useState(null);
 
-  const { data: products = [] } = useQuery({
+  const { data: products = [], refetch } = useQuery({
     queryKey: ['products'],
     queryFn: async () => {
       const res = await fetch('http://localhost:5000/products');
@@ -58,6 +57,7 @@ const Categories = () => {
           <BookingModal
             bookingProduct={bookingProduct}
             setBookingProduct={setBookingProduct}
+            refetch={refetch}
           ></BookingModal>
         )}
       </div>
