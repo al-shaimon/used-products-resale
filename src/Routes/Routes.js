@@ -10,6 +10,7 @@ import SellerDashboard from '../Pages/Dashboard/SellerDashboard/SellerDashboard'
 import Error from '../Pages/Error/Error';
 import Category from '../Pages/Home/Category';
 import Home from '../Pages/Home/Home';
+import MyBookedProduct from '../Pages/Home/MyBookedProduct/MyBookedProduct';
 import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
 import PrivateRoute from './PrivateRoute';
@@ -70,7 +71,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/dashboard/',
-        element: <Dashboard></Dashboard>,
+        element: <MyBookedProduct></MyBookedProduct>,
       },
       {
         path: '/dashboard/admin',
