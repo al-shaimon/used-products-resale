@@ -5,6 +5,7 @@ import Blogs from '../Pages/Blogs/Blogs';
 import ContactUs from '../Pages/ContactUs/ContactUs';
 import AdminDashboard from '../Pages/Dashboard/AdminDashboard/AdminDashboard';
 import BuyerDashboard from '../Pages/Dashboard/BuyerDashboard/BuyerDashboard';
+import Dashboard from '../Pages/Dashboard/Dashboard/Dashboard';
 import SellerDashboard from '../Pages/Dashboard/SellerDashboard/SellerDashboard';
 import Error from '../Pages/Error/Error';
 import Category from '../Pages/Home/Category';
@@ -49,13 +50,12 @@ const router = createBrowserRouter([
         <Category></Category>
       </PrivateRoute>
     ),
-    
+
     errorElement: <Error></Error>,
     children: [
       {
         path: '/category/:id',
         element: <Category></Category>,
-        
       },
     ],
   },
@@ -68,6 +68,10 @@ const router = createBrowserRouter([
     ),
     errorElement: <Error></Error>,
     children: [
+      {
+        path: '/dashboard/',
+        element: <Dashboard></Dashboard>,
+      },
       {
         path: '/dashboard/admin',
         element: <AdminDashboard></AdminDashboard>,
