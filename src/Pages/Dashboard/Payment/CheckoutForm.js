@@ -14,8 +14,7 @@ const CheckoutForm = ({ booking }) => {
   console.log(booking);
 
   useEffect(() => {
-    
-    fetch('http://localhost:5000/create-payment-intent', {
+    fetch('https://assignment-12-server-taupe.vercel.app/create-payment-intent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,14 +67,14 @@ const CheckoutForm = ({ booking }) => {
     }
     if (paymentIntent.status === 'succeeded') {
       console.log('card info', card);
-      
+
       const payment = {
         price,
         transactionId: paymentIntent.id,
         email,
         bookingId: _id,
       };
-      fetch('http://localhost:5000/payments', {
+      fetch('https://assignment-12-server-taupe.vercel.app/payments', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -117,7 +116,7 @@ const CheckoutForm = ({ booking }) => {
         <button
           className="btn btn-sm mt-4 btn-primary"
           type="submit"
-          disabled={!stripe || !clientSecret || processing}
+          // disabled={!stripe || !clientSecret || processing}
         >
           Pay
         </button>

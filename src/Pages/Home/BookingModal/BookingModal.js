@@ -26,7 +26,7 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
       address,
     };
 
-    axios.post('http://localhost:5000/bookings', booking).then((data) => {
+    axios.post('https://assignment-12-server-taupe.vercel.app/bookings', booking).then((data) => {
       if (data.data.acknowledged) {
         setBookingProduct(null);
         toast.success('Booking Successful');

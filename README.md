@@ -1,6 +1,12 @@
 # Welcome to Diamond Tech Resale
 
-# Live site link: 
+# Live site link: https://computer-resale.web.app/
+
+# Admin Access:
+
+# Email: diamondtech@admin.com
+
+# Password: @DiamondTech008
 
 1. This is a resealing website.
 2. You can buy and sell computer parts from our site.
