@@ -1,6 +1,7 @@
+import axios from 'axios';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
-
 
 const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
   const { model, resalePrice } = bookingProduct;
@@ -23,8 +24,27 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
       address,
     };
 
-    console.log(booking);
-    setBookingProduct(null);
+    // fetch('http://localhost:5000/bookings', {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify(booking),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     setBookingProduct(null);
+    //     toast.success('Booking Successful');
+    //   });
+
+    axios.post('http://localhost:5000/bookings', booking).then((data) => {
+      console.log(data);
+      if (data.data.acknowledged) {
+        setBookingProduct(null);
+        toast.success('Booking Successful');
+      }
+    });
   };
 
   return (
@@ -37,18 +57,6 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
           </label>
           <h3 className="text-lg font-bold">{model}</h3>
           <form onSubmit={handleBooking} className="grid grid-cols-1 gap-3 mt-5">
-            {/* form er vitor e ei info gula thakbe 
-            not editable:
-            *user name
-            *email
-            *item name
-            *price
-
-            input field
-            *phone number
-            *meeting address
-          */}
-
             <input
               name="name"
               type="text"
