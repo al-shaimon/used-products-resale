@@ -10,6 +10,7 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
   const handleBooking = (event) => {
     event.preventDefault();
     const form = event.target;
+    const model = form.model.value;
     const name = form.name.value;
     const email = form.email.value;
     const price = form.price.value;
@@ -17,6 +18,7 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
     const address = form.address.value;
 
     const booking = {
+      model,
       name,
       email,
       price,
@@ -39,7 +41,6 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
     //   });
 
     axios.post('http://localhost:5000/bookings', booking).then((data) => {
-      console.log(data);
       if (data.data.acknowledged) {
         setBookingProduct(null);
         toast.success('Booking Successful');
@@ -55,8 +56,15 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
           <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">
             ✕
           </label>
-          <h3 className="text-lg font-bold">{model}</h3>
           <form onSubmit={handleBooking} className="grid grid-cols-1 gap-3 mt-5">
+            <input
+              name="model"
+              type="text"
+              defaultValue={model}
+              placeholder="Product Name"
+              className="input input-bordered w-full"
+              disabled
+            />
             <input
               name="name"
               type="text"
