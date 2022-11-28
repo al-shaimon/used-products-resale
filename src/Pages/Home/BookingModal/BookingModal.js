@@ -26,20 +26,6 @@ const BookingModal = ({ bookingProduct, setBookingProduct, refetch }) => {
       address,
     };
 
-    // fetch('http://localhost:5000/bookings', {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(booking),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     setBookingProduct(null);
-    //     toast.success('Booking Successful');
-    //   });
-
     axios.post('http://localhost:5000/bookings', booking).then((data) => {
       if (data.data.acknowledged) {
         setBookingProduct(null);

@@ -3,9 +3,9 @@ import DashboardLayout from '../Layout/DashboardLayout';
 import Main from '../Layout/Main';
 import Blogs from '../Pages/Blogs/Blogs';
 import ContactUs from '../Pages/ContactUs/ContactUs';
-import AdminDashboard from '../Pages/Dashboard/AdminDashboard/AdminDashboard';
+import AddProducts from '../Pages/Dashboard/AddProducts/AddProducts';
 import BuyerDashboard from '../Pages/Dashboard/BuyerDashboard/BuyerDashboard';
-import Dashboard from '../Pages/Dashboard/Dashboard/Dashboard';
+import Payment from '../Pages/Dashboard/Payment/Payment';
 import SellerDashboard from '../Pages/Dashboard/SellerDashboard/SellerDashboard';
 import Error from '../Pages/Error/Error';
 import Category from '../Pages/Home/Category';
@@ -13,6 +13,7 @@ import Home from '../Pages/Home/Home';
 import MyBookedProduct from '../Pages/Home/MyBookedProduct/MyBookedProduct';
 import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
+import AdminRoute from './AdminRoute';
 import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
@@ -74,16 +75,33 @@ const router = createBrowserRouter([
         element: <MyBookedProduct></MyBookedProduct>,
       },
       {
-        path: '/dashboard/admin',
-        element: <AdminDashboard></AdminDashboard>,
+        path: '/dashboard/addProducts',
+        element: (
+          <AdminRoute>
+            <AddProducts></AddProducts>
+          </AdminRoute>
+        ),
       },
       {
-        path: '/dashboard/buyer',
-        element: <BuyerDashboard></BuyerDashboard>,
+        path: '/dashboard/allBuyers',
+        element: (
+          <AdminRoute>
+            <BuyerDashboard></BuyerDashboard>
+          </AdminRoute>
+        ),
       },
       {
-        path: '/dashboard/seller',
-        element: <SellerDashboard></SellerDashboard>,
+        path: '/dashboard/allSellers',
+        element: (
+          <AdminRoute>
+            <SellerDashboard></SellerDashboard>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: '/dashboard/payment/:id',
+        element: <Payment></Payment>,
+        loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`),
       },
     ],
   },
