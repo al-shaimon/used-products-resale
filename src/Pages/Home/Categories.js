@@ -34,7 +34,7 @@ const Categories = () => {
         {/* Categories */}
         <div className="flex justify-center">
           {categoryProducts.map((categoryProduct) => (
-            <div key={categoryProduct._id} className="card w-48 bg-base-100 shadow-xl m-2 p-2">
+            <div key={categoryProduct._id} className="card w-40 bg-base-100 shadow-xl m-1 p-1">
               <Link to={`/category`} className="card-body ">
                 <img className="mx-auto w-1/2" src="https://i.ibb.co/KLpDJJJ/monitor.png" alt="" />
                 <p className="font-semibold">{categoryProduct.category}</p>
@@ -44,7 +44,7 @@ const Categories = () => {
         </div>
 
         {/* All Products */}
-        <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-3">
+        <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {products?.map((product) => (
             <Products
               key={product._id}

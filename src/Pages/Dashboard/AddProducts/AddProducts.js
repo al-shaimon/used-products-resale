@@ -192,7 +192,7 @@ const AddProducts = () => {
           />
           {errors.img && <p className="text-red-500">{errors.img.message}</p>}
         </div>
-        <input className="btn btn-accent w-full mt-4" value="Add Doctor" type="submit" />
+        <input className="btn btn-accent w-full mt-4" value="Add Product" type="submit" />
       </form>
     </div>
   );
