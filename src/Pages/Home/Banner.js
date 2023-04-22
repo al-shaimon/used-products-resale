@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
@@ -16,7 +17,7 @@ const Banner = () => {
               Welcome to the Diamond Tech Resale. You can buy and sell your computer parts here. You
               can build your dream pc with reasonable price from us.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <Link to='/category'><button className="btn btn-primary">Get Started</button></Link>
           </div>
         </div>
       </div>

@@ -68,6 +68,7 @@ const Login = () => {
                 required: 'Email Address is required',
               })}
               className="input input-bordered w-full max-w-xs"
+              defaultValue={"diamondtech@admin.com"}
             />
             {errors.email && <p className="text-red-600">{errors.email?.message}</p>}
           </div>
@@ -82,6 +83,7 @@ const Login = () => {
                 minLength: { value: 6, message: 'Password must be 6 characters or longer' },
               })}
               className="input input-bordered w-full max-w-xs"
+              defaultValue={"@DiamondTech008"}
             />
             {errors.password && <p className="text-red-600">{errors.password?.message}</p>}
             <label className="label">

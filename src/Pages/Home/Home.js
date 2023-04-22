@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutUs from './AboutUs';
+// import AboutUs from './AboutUs';
 import Ads from './Ads';
 import Banner from './Banner';
 import Categories from './Categories';
@@ -10,7 +10,7 @@ const Home = () => {
       <Banner></Banner>
       <Ads></Ads>
       <Categories></Categories>
-      <AboutUs></AboutUs>
+      {/* <AboutUs></AboutUs> */}
     </div>
   );
 };
