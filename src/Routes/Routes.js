@@ -15,6 +15,7 @@ import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
 import AdminRoute from './AdminRoute';
 import PrivateRoute from './PrivateRoute';
+import AllProducts from '../Pages/Dashboard/AllProducts/AllProducts';
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AddProducts></AddProducts>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: '/dashboard/allProducts',
+        element: (
+          <AdminRoute>
+            <AllProducts></AllProducts>
           </AdminRoute>
         ),
       },
