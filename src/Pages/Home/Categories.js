@@ -45,7 +45,7 @@ const Categories = () => {
 
         {/* All Products */}
         {/* <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"> */}
-        <div className="mx-6 my-6 gap-6 md:grid flex flex-col items-center md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-6 md:my-6 my-2 gap-6 md:grid flex flex-col items-center md:grid-cols-2 lg:grid-cols-3">
           {products?.map((product) => (
             <Products
               key={product._id}
