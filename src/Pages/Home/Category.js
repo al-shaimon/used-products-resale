@@ -44,7 +44,7 @@ const Category = () => {
 
       {/*All Products */}
 
-      <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-6 my-6 gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center">
         {products?.map((product) => (
           <Products
             key={product._id}
